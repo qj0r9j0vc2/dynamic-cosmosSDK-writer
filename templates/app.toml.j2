@@ -1,0 +1,86 @@
+minimum-gas-prices = "{{ minimum_gas_prices | default('0acanto') }}"
+query-gas-limit = "{{ query_gas_limit | default('0') }}"
+pruning = "{{ pruning | default('default') }}"
+pruning-keep-recent = "{{ pruning_keep_recent | default('0') }}"
+pruning-interval = "{{ pruning_interval | default('0') }}"
+halt-height = "{{ halt_height | default('0') }}"
+halt-time = "{{ halt_time | default('0') }}"
+min-retain-blocks = "{{ min_retain_blocks | default('0') }}"
+inter-block-cache = "{{ inter_block_cache | default(true) }}"
+index-events = "{{ index_events | default([]) }}"
+iavl-cache-size = "{{ iavl_cache_size | default('781250') }}"
+iavl-disable-fastnode = "{{ iavl_disable_fastnode | default(false) }}"
+app-db-backend = "{{ app_db_backend | default('') }}"
+
+[telemetry]
+service-name = "{{ telemetry.service_name | default('') }}"
+enabled = "{{ telemetry.enabled | default(false) }}"
+enable-hostname = "{{ telemetry.enable_hostname | default(false) }}"
+enable-hostname-label = "{{ telemetry.enable_hostname_label | default(false) }}"
+enable-service-label = "{{ telemetry.enable_service_label | default(false) }}"
+prometheus-retention-time = "{{ telemetry.prometheus_retention_time | default('0') }}"
+global-labels = "{{ telemetry.global_labels | default([]) }}"
+metrics-sink = "{{ telemetry.metrics_sink | default('') }}"
+statsd-addr = "{{ telemetry.statsd_addr | default('') }}"
+datadog-hostname = "{{ telemetry.datadog_hostname | default('') }}"
+
+[api]
+enable = "{{ api.enable | default(false) }}"
+swagger = "{{ api.swagger | default(false) }}"
+address = "{{ api.address | default('tcp://localhost:1317') }}"
+max-open-connections = "{{ api.max_open_connections | default('1000') }}"
+rpc-read-timeout = "{{ api.rpc_read_timeout | default('10') }}"
+rpc-write-timeout = "{{ api.rpc_write_timeout | default('0') }}"
+rpc-max-body-bytes = "{{ api.rpc_max_body_bytes | default('1000000') }}"
+enabled-unsafe-cors = "{{ api.enabled_unsafe_cors | default(false) }}"
+
+[grpc]
+enable = "{{ grpc.enable | default(true) }}"
+address = "{{ grpc.address | default('localhost:9090') }}"
+max-recv-msg-size = "{{ grpc.max_recv_msg_size | default('10485760') }}"
+max-send-msg-size = "{{ grpc.max_send_msg_size | default('2147483647') }}"
+
+[grpc-web]
+enable = "{{ grpc_web.enable | default(true) }}"
+
+[state-sync]
+snapshot-interval = "{{ state_sync.snapshot_interval | default('1500') }}"
+snapshot-keep-recent = "{{ state_sync.snapshot_keep_recent | default('2') }}"
+
+[streaming]
+
+[streaming.abci]
+keys = "{{ streaming_abci.keys | default([]) }}"
+plugin = "{{ streaming_abci.plugin | default('') }}"
+stop-node-on-err = "{{ streaming_abci.stop_node_on_err | default(true) }}"
+
+[mempool]
+max-txs = "{{ mempool.max_txs | default('5000') }}"
+
+[evm]
+tracer = "{{ evm.tracer | default('') }}"
+max-tx-gas-wanted = "{{ evm.max_tx_gas_wanted | default('0') }}"
+
+[json-rpc]
+enable = "{{ json_rpc.enable | default(true) }}"
+address = "{{ json_rpc.address | default('127.0.0.1:8545') }}"
+ws-address = "{{ json_rpc.ws_address | default('127.0.0.1:8546') }}"
+api = "{{ json_rpc.api | default('eth,net,web3') }}"
+gas-cap = "{{ json_rpc.gas_cap | default('25000000') }}"
+evm-timeout = "{{ json_rpc.evm_timeout | default('5s') }}"
+txfee-cap = "{{ json_rpc.txfee_cap | default('1') }}"
+filter-cap = "{{ json_rpc.filter_cap | default('200') }}"
+feehistory-cap = "{{ json_rpc.feehistory_cap | default('100') }}"
+logs-cap = "{{ json_rpc.logs_cap | default('10000') }}"
+block-range-cap = "{{ json_rpc.block_range_cap | default('10000') }}"
+http-timeout = "{{ json_rpc.http_timeout | default('30s') }}"
+http-idle-timeout = "{{ json_rpc.http_idle_timeout | default('2m0s') }}"
+allow-unprotected-txs = "{{ json_rpc.allow_unprotected_txs | default(false) }}"
+max-open-connections = "{{ json_rpc.max_open_connections | default('0') }}"
+enable-indexer = "{{ json_rpc.enable_indexer | default(false) }}"
+metrics-address = "{{ json_rpc.metrics_address | default('127.0.0.1:6065') }}"
+fix-revert-gas-refund-height = "{{ json_rpc.fix_revert_gas_refund_height | default('0') }}"
+
+[tls]
+certificate-path = "{{ tls.certificate_path | default('') }}"
+key-path = "{{ tls.key_path | default('') }}"

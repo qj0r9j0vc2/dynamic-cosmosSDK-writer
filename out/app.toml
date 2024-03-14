@@ -1,0 +1,86 @@
+minimum-gas-prices = "0acanto"
+query-gas-limit = "0"
+pruning = "default"
+pruning-keep-recent = "0"
+pruning-interval = "0"
+halt-height = "0"
+halt-time = "0"
+min-retain-blocks = "0"
+inter-block-cache = "True"
+index-events = "[]"
+iavl-cache-size = "781250"
+iavl-disable-fastnode = "False"
+app-db-backend = ""
+
+[telemetry]
+service-name = ""
+enabled = "False"
+enable-hostname = "False"
+enable-hostname-label = "False"
+enable-service-label = "False"
+prometheus-retention-time = "0"
+global-labels = "[]"
+metrics-sink = ""
+statsd-addr = ""
+datadog-hostname = ""
+
+[api]
+enable = "False"
+swagger = "False"
+address = "tcp://localhost:1317"
+max-open-connections = "1000"
+rpc-read-timeout = "10"
+rpc-write-timeout = "0"
+rpc-max-body-bytes = "1000000"
+enabled-unsafe-cors = "False"
+
+[grpc]
+enable = "True"
+address = "localhost:9090"
+max-recv-msg-size = "10485760"
+max-send-msg-size = "2147483647"
+
+[grpc-web]
+enable = "True"
+
+[state-sync]
+snapshot-interval = "12"
+snapshot-keep-recent = "2"
+
+[streaming]
+
+[streaming.abci]
+keys = "[]"
+plugin = ""
+stop-node-on-err = "True"
+
+[mempool]
+max-txs = "5000"
+
+[evm]
+tracer = ""
+max-tx-gas-wanted = "0"
+
+[json-rpc]
+enable = "True"
+address = "127.0.0.1:8545"
+ws-address = "127.0.0.1:8546"
+api = "eth,net,web3"
+gas-cap = "25000000"
+evm-timeout = "5s"
+txfee-cap = "1"
+filter-cap = "200"
+feehistory-cap = "100"
+logs-cap = "10000"
+block-range-cap = "10000"
+http-timeout = "30s"
+http-idle-timeout = "2m0s"
+allow-unprotected-txs = "False"
+max-open-connections = "0"
+enable-indexer = "False"
+metrics-address = "127.0.0.1:6065"
+fix-revert-gas-refund-height = "0"
+
+[tls]
+certificate-path = ""
+key-path = ""

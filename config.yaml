@@ -1,0 +1,7 @@
+configToml:
+  instrumentation:
+    namespace: true
+
+appToml:
+  state_sync:
+    snapshot_interval: "12"
